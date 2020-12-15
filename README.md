@@ -13,9 +13,11 @@ See composer.json
 
 Extend your DataObject to add permissions (via Security/Member)
 
-```Your\Funky\DataObject:
+```
+Your\Funky\DataObject:
   extensions:
-    - NSWDPC\DataObjectEditable\Extensions\DataObjectEditable```
+    - NSWDPC\DataObjectEditable\Extensions\DataObjectEditable
+```
 
 ## License
 
