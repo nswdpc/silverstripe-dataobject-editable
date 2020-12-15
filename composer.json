@@ -1,5 +1,5 @@
 {
-    "name": "nswdpc/ silverstripe-dataobject-editable",
+    "name": "nswdpc/silverstripe-dataobject-editable",
     "description": "Add permissions to allow non-admins to edit DataObjects",
     "type": "silverstripe-vendormodule",
     "keywords": [
