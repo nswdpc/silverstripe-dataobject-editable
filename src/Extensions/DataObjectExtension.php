@@ -7,7 +7,7 @@ use SilverStripe\Security\Permission;
 use SilverStripe\Security\PermissionProvider;
 use SilverStripe\Security\Member;
 
-class DataObjectEditable extends DataExtension implements PermissionProvider
+class DataObjectExtension extends DataExtension implements PermissionProvider
 {
 
     public function providePermissions()
