@@ -1,5 +1,35 @@
-# Add permissions to allow non-admins to edit DataObjects
-Required to allow
+# Permission extension for DataObjects
+
+Adds handy permissions to allow certain groups and roles to access dataobject records, based on configuration.
+
+This allows, for instance, content administrators access to create/edit and delete records not handled by the core CMS module permissions
+
+## Permissions
+
+View, Edit and Delete permission handling is provided
+
+### Edit / Create
+
+> Edit content data objects
+
+Edit and create are bundled into one permission, if you can create you can edit.
+
+### Delete
+
+> Delete content data objects
+
+This specific permission is provided allowing members to delete dataobject records
+
+### View
+
+Anonymous users can view a dataobject, this allows permission checks to pass in your project controllers for published URLs and preview links.
+
+When adding access to administration areas that list the relevant dataobjects, ensure you check this permission as well.
+
+## Overriding permissions
+
+It's always wise to specify granular permissions on specific dataobjects. This extension is suitable for content-related dataobjects where adding access does not have implications for the privacy of any data.
+
 
 ## Requirements
 
