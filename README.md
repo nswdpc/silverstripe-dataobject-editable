@@ -22,13 +22,15 @@ This specific permission is provided allowing members to delete dataobject recor
 
 ### View
 
+> View content data objects
+
 Anonymous users can view a dataobject, this allows permission checks to pass in your project controllers for published URLs and preview links.
 
 When adding access to administration areas that list the relevant dataobjects, ensure you check this permission as well.
 
 ## Overriding permissions
 
-It's always wise to specify granular permissions on specific dataobjects. This extension is suitable for content-related dataobjects where adding access does not have implications for the privacy of any data.
+This extension is suitable for content-related dataobjects where adding access does not have implications for the privacy of any data.
 
 
 ## Requirements
@@ -41,12 +43,12 @@ See composer.json
 
 ## Use
 
-Extend your DataObject to add permissions (via Security/Member)
+Extend your DataObject to add the Edit/Create/View permissions
 
 ```
 Your\Funky\DataObject:
   extensions:
-    - NSWDPC\DataObjectEditable\Extensions\DataObjectEditable
+    - 'NSWDPC\DataObjectEditable\Extensions\DataObjectExtension'
 ```
 
 ## License
