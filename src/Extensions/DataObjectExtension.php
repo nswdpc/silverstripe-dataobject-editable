@@ -15,6 +15,9 @@ use SilverStripe\Security\Security;
 class DataObjectExtension extends DataExtension implements PermissionProvider
 {
 
+    /**
+     * @return array
+     */
     public function providePermissions()
     {
         return [
