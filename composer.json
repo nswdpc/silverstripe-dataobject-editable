@@ -33,7 +33,8 @@
     },
     "autoload": {
         "psr-4": {
-            "NSWDPC\\DataObjectEditable\\": "src/"
+            "NSWDPC\\DataObjectEditable\\": "src/",
+            "NSWDPC\\DataObjectEditable\\Tests\\": "tests/"
         }
     },
     "scripts": {
