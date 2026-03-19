@@ -11,20 +11,20 @@ SilverStripe\Security\Permission:
     Group: '=>SilverStripe\Security\Group.admingroup'
   dataobject_view:
     Code: DATAOBJECT_VIEW
-    Group: '=>SilverStripe\Security\Group.content-administrators-group'
+    Group: '=>SilverStripe\Security\Group.contentpermissionsgroups'
   dataobject_edit:
     Code: DATAOBJECT_EDIT
-    Group: '=>SilverStripe\Security\Group.content-administrators-group'
+    Group: '=>SilverStripe\Security\Group.contentpermissionsgroups'
   dataobject_delete:
     Code: DATAOBJECT_DELETE
-    Group: '=>SilverStripe\Security\Group.content-administrators-group'
+    Group: '=>SilverStripe\Security\Group.contentpermissionsgroups'
 SilverStripe\Security\Member:
    memberwith:
       Email: with@example.com
       Firstname: With
       Surname: Permissions
       Groups:
-        - =>SilverStripe\Security\Group.content-administrators-group
+        - =>SilverStripe\Security\Group.contentpermissionsgroups
    memberwithout:
       Email: without@example.com
       Firstname: Without
