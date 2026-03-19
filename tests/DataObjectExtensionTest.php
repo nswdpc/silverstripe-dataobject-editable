@@ -7,7 +7,6 @@ use SilverStripe\Security\Member;
 
 class DataObjectExtensionTest extends SapphireTest
 {
-
     protected $usesDatabase = true;
 
     protected static $fixture_file = './DataObjectExtensionTest.yml';
