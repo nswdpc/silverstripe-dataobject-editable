@@ -2,7 +2,7 @@
 
 namespace NSWDPC\DataObjectEditable\Extensions;
 
-use SilverStripe\ORM\DataExtension;
+use SilverStripe\Core\Extension;
 use SilverStripe\Security\Permission;
 use SilverStripe\Security\PermissionProvider;
 use SilverStripe\Security\Member;
@@ -12,7 +12,7 @@ use SilverStripe\Security\Security;
 /**
  * An extension applied to DataObject classes to provide basic permissions to them via configuration
  */
-class DataObjectExtension extends DataExtension implements PermissionProvider
+class DataObjectExtension extends Extension implements PermissionProvider
 {
 
     /**
