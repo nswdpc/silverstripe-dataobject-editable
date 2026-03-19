@@ -5,9 +5,7 @@ namespace NSWDPC\DataObjectEditable\Extensions;
 use SilverStripe\Core\Extension;
 use SilverStripe\Security\Permission;
 use SilverStripe\Security\PermissionProvider;
-use SilverStripe\Security\Member;
 use SilverStripe\Security\Security;
-
 
 /**
  * An extension applied to DataObject classes to provide basic permissions to them via configuration
@@ -15,7 +13,6 @@ use SilverStripe\Security\Security;
  */
 class DataObjectExtension extends Extension implements PermissionProvider
 {
-
     /**
      * @return array
      */
@@ -43,8 +40,9 @@ class DataObjectExtension extends Extension implements PermissionProvider
     /**
      * Check view permission
      */
-    public function canView($member = null): ?bool {
-        if(!$member) {
+    public function canView($member = null): ?bool
+    {
+        if (!$member) {
             $member = Security::getCurrentUser();
         }
 
