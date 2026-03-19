@@ -8,7 +8,6 @@ use SilverStripe\ORM\DataObject;
 
 class TestDataObject extends DataObject implements TestOnly
 {
-
     private static string $table_name = "DataObjectEditableTestDataObject";
 
     private static array $db = [
