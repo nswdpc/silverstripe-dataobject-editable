@@ -2,19 +2,17 @@
 
 namespace NSWDPC\DataObjectEditable\Extensions;
 
-use SilverStripe\ORM\DataExtension;
+use SilverStripe\Core\Extension;
 use SilverStripe\Security\Permission;
 use SilverStripe\Security\PermissionProvider;
-use SilverStripe\Security\Member;
 use SilverStripe\Security\Security;
-
 
 /**
  * An extension applied to DataObject classes to provide basic permissions to them via configuration
+ * @extends \SilverStripe\Core\Extension<static>
  */
-class DataObjectExtension extends DataExtension implements PermissionProvider
+class DataObjectExtension extends Extension implements PermissionProvider
 {
-
     /**
      * @return array
      */
@@ -22,18 +20,18 @@ class DataObjectExtension extends DataExtension implements PermissionProvider
     {
         return [
             'DATAOBJECT_VIEW' => [
-                'name' => _t(__CLASS__ . '.VIEW_PERMISSION', 'View content data objects'),
-                'category' => _t(__CLASS__ . '.CONTENT_PERMISSIONS', 'Content permissions'),
+                'name' => _t(self::class . '.VIEW_PERMISSION', 'View content data objects'),
+                'category' => _t(self::class . '.CONTENT_PERMISSIONS', 'Content permissions'),
                 'sort' => 400,
             ],
             'DATAOBJECT_EDIT' => [
-                'name' => _t(__CLASS__ . '.EDIT_PERMISSION', 'Edit content data objects'),
-                'category' => _t(__CLASS__ . '.CONTENT_PERMISSIONS', 'Content permissions'),
+                'name' => _t(self::class . '.EDIT_PERMISSION', 'Edit content data objects'),
+                'category' => _t(self::class . '.CONTENT_PERMISSIONS', 'Content permissions'),
                 'sort' => 200,
             ],
             'DATAOBJECT_DELETE' => [
-                'name' => _t(__CLASS__ . '.DELETE_PERMISSION', 'Delete content data objects'),
-                'category' => _t(__CLASS__ . '.CONTENT_PERMISSIONS', 'Content permissions'),
+                'name' => _t(self::class . '.DELETE_PERMISSION', 'Delete content data objects'),
+                'category' => _t(self::class . '.CONTENT_PERMISSIONS', 'Content permissions'),
                 'sort' => 300,
             ],
         ];
@@ -42,16 +40,19 @@ class DataObjectExtension extends DataExtension implements PermissionProvider
     /**
      * Check view permission
      */
-    public function canView($member = null) {
-        if(!$member) {
+    public function canView($member = null): ?bool
+    {
+        if (!$member) {
             $member = Security::getCurrentUser();
         }
-        if(!$member) {
+
+        if (!$member) {
             // anonymous users can view a dataobject
             return true;
-        } else if (Permission::checkMember($member, 'DATAOBJECT_VIEW')) {
+        } elseif (Permission::checkMember($member, 'DATAOBJECT_VIEW')) {
             return true;
         }
+
         return null;
 
     }
@@ -59,33 +60,36 @@ class DataObjectExtension extends DataExtension implements PermissionProvider
     /**
      * Check create (edit) permission
      */
-    public function canCreate($member = null)
+    public function canCreate($member = null): ?bool
     {
         if (Permission::checkMember($member, 'DATAOBJECT_EDIT')) {
             return true;
         }
+
         return null;
     }
 
     /**
      * Check edit permission
      */
-    public function canEdit($member = null)
+    public function canEdit($member = null): ?bool
     {
         if (Permission::checkMember($member, 'DATAOBJECT_EDIT')) {
             return true;
         }
+
         return null;
     }
 
     /**
      * Check delete permission
      */
-    public function canDelete($member = null)
+    public function canDelete($member = null): ?bool
     {
         if (Permission::checkMember($member, 'DATAOBJECT_DELETE')) {
             return true;
         }
+
         return null;
     }
 

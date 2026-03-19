@@ -1,4 +1,8 @@
 /client/node_modules
 /vendor/
 .DS_Store
-/.php_cs.cache
+/.php-cs-fixer.cache
+/.phpactor.json
+/app/
+/public/
+/composer.lock
