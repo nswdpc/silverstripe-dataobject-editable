@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace NSWDPC\DataObjectEditable\Tests;
 
 use NSWDPC\DataObjectEditable\Extensions\DataObjectExtension;
